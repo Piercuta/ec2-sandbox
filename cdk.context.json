@@ -1,0 +1,259 @@
+{
+  "vpc-provider:account=532673134317:filter.vpc-id=vpc-08c68cc3f0ec0c528:region=eu-west-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-08c68cc3f0ec0c528",
+    "vpcCidrBlock": "10.0.0.0/16",
+    "ownerAccountId": "532673134317",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "ecs-service",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-0c510c37ae7da33b3",
+            "cidr": "10.0.12.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-05dc8122fd4fca275"
+          },
+          {
+            "subnetId": "subnet-050f5ba027f33da20",
+            "cidr": "10.0.13.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0695b8acbae63990b"
+          },
+          {
+            "subnetId": "subnet-0be0ba9ad57c8ca7e",
+            "cidr": "10.0.14.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-01ab3a6a914ebadaf"
+          }
+        ]
+      },
+      {
+        "name": "rds-lambda-secret",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-075de1b06c24a3f65",
+            "cidr": "10.0.18.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0315a27a6d93accb0"
+          },
+          {
+            "subnetId": "subnet-02b1a6947fc12a889",
+            "cidr": "10.0.19.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0b59949383b1b0d7d"
+          },
+          {
+            "subnetId": "subnet-0964b56ea059e8610",
+            "cidr": "10.0.20.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-0faed5f5c44641701"
+          }
+        ]
+      },
+      {
+        "name": "rds-aurora",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-01be6ad4a4cc75367",
+            "cidr": "10.0.6.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0572bb2c374aed972"
+          },
+          {
+            "subnetId": "subnet-06cfc4731af422fc0",
+            "cidr": "10.0.7.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-02be7518c153d2c4e"
+          },
+          {
+            "subnetId": "subnet-02ea11a34fa98e018",
+            "cidr": "10.0.8.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-0d64b651ed8bc80b7"
+          }
+        ]
+      },
+      {
+        "name": "alb-public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-0757b3a46072378d0",
+            "cidr": "10.0.0.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0916cf971bed042d7"
+          },
+          {
+            "subnetId": "subnet-02251f8f6083baacd",
+            "cidr": "10.0.1.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-07c11641a0e9c77bc"
+          },
+          {
+            "subnetId": "subnet-05186042627638ab9",
+            "cidr": "10.0.2.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-0aec9b9e34fb72f68"
+          }
+        ]
+      }
+    ]
+  },
+  "ami:account=532673134317:filters.image-type.0=machine:filters.name.0=ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*:filters.state.0=available:owners.0=099720109477:region=eu-west-1": "ami-021d9f8e43481e7da",
+  "vpc-provider:account=532673134317:filter.vpc-id=vpc-0be36a2df5cabb58f:region=eu-west-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-0be36a2df5cabb58f",
+    "vpcCidrBlock": "10.0.0.0/16",
+    "ownerAccountId": "532673134317",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "piercuta-dev-eks-private-nat-subnet-az3",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-09b1e8cd3bc2a6b5e",
+            "cidr": "10.0.8.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-0f6d576476612cee4"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-public-subnet-az3",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-00966b18007001df1",
+            "cidr": "10.0.2.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-0a8c898d8ba02e981"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-eks-private-nat-subnet-az1",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-09f633b4377098892",
+            "cidr": "10.0.6.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0f6d576476612cee4"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-public-subnet-az2",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-0a34ae34dc6dd0c13",
+            "cidr": "10.0.1.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0a8c898d8ba02e981"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-rds-lambda-secret-subnet-az2",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-0ad2cf6fe3f66a5e7",
+            "cidr": "10.0.10.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0f6d576476612cee4"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-eks-private-nat-subnet-az2",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-0f3029dfef0c88ca2",
+            "cidr": "10.0.7.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0f6d576476612cee4"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-rds-aurora-subnet-az1",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-0e5d3ec82f4f92317",
+            "cidr": "10.0.3.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-095edb60b2d03cf79"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-rds-lambda-secret-subnet-az3",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-0ba5421e5887e1401",
+            "cidr": "10.0.11.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-0f6d576476612cee4"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-rds-lambda-secret-subnet-az1",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-09140550de17934a1",
+            "cidr": "10.0.9.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0f6d576476612cee4"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-public-subnet-az1",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-02e3ef9b482b4796f",
+            "cidr": "10.0.0.0/24",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0a8c898d8ba02e981"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-rds-aurora-subnet-az2",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-0f51c7193da8d16c9",
+            "cidr": "10.0.4.0/24",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-095edb60b2d03cf79"
+          }
+        ]
+      },
+      {
+        "name": "piercuta-dev-rds-aurora-subnet-az3",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-0d052cca9ace1ce97",
+            "cidr": "10.0.5.0/24",
+            "availabilityZone": "eu-west-1c",
+            "routeTableId": "rtb-095edb60b2d03cf79"
+          }
+        ]
+      }
+    ]
+  }
+}

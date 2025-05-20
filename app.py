@@ -1,28 +1,26 @@
 #!/usr/bin/env python3
 import os
+from dotenv import load_dotenv
 
 import aws_cdk as cdk
-
 from ec2_sandbox.ec2_sandbox_stack import Ec2SandboxStack
 
+# Charger le .env
+load_dotenv()
 
 app = cdk.App()
-Ec2SandboxStack(app, "Ec2SandboxStack",
-    # If you don't specify 'env', this stack will be environment-agnostic.
-    # Account/Region-dependent features and context lookups will not work,
-    # but a single synthesized template can be deployed anywhere.
 
-    # Uncomment the next line to specialize this stack for the AWS Account
-    # and Region that are implied by the current CLI configuration.
+# Lire la variable d'environnement
+vpc_id = os.getenv("VPC_ID")
+if not vpc_id:
+    raise ValueError("VPC_ID est manquant dans le fichier .env")
 
-    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
-
-    # Uncomment the next line if you know exactly what Account and Region you
-    # want to deploy the stack to. */
-
-    #env=cdk.Environment(account='123456789012', region='us-east-1'),
-
-    # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-    )
+# Passer la valeur à la stack via des paramètres (ou context si tu préfères)
+Ec2SandboxStack(
+    app, "Ec2SandboxStack",
+    stack_name="ec2-sandbox-stack",
+    env=cdk.Environment(account=os.getenv("CDK_DEFAULT_ACCOUNT"), region=os.getenv("CDK_DEFAULT_REGION")),
+    vpc_id=vpc_id
+)
 
 app.synth()
